@@ -1,7 +1,19 @@
-// import { useState } from 'react'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomeComponent from "./components/HomeComponent";
 
-import "./App.css";
-
-function App() {}
+const App = () => {
+  function App() {
+    return (
+      <>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomeComponent />} />
+            <Route path="/menu" element={<MenuComponent />} />
+          </Routes>
+        </BrowserRouter>
+      </>
+    );
+  }
+};
 
 export default App;
