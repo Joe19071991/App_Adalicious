@@ -43,25 +43,30 @@ const menuItems = [
 
 const Menu = () => {
   return (
-    <div className="bg-white border border-gray-300 rounded-lg shadow-sm  m-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4 ">
-      <Logo />
-      <h1 className="font-bold text-xl text-amber-600 text-center font-Boldonse">
+    <div className="bg-gradient-to-br from-white to-amber-50 border border-gray-200 rounded-2xl shadow-md m-6 p-6 space-y-6">
+      <div className="flex justify-center">
+        <Logo />
+      </div>
+
+      <h1 className="text-2xl font-extrabold text-amber-600 text-center font-Boldonse">
         Bienvenue sur Adalicious {name}!
       </h1>
 
-      {menuItems.map((item, index) => (
-        <div
-          key={index}
-          className="bg-white border border-gray-300 rounded-lg p-4 shadow-lg flex flex-col items-center m-8 space-y-4 "
-        >
-          <span className="text-5xl">{item.image}</span>
-          <h2 className="text-xl font-bold mt-2">{item.plate}</h2>
-          <p className="text-gray-600 text-center mt-1">{item.description}</p>
-          <button className="text-white bg-green-800 hover:bg-green-700 focus:ring-2 focus:outline-none focus:ring-green-400  font-medium rounded-lg text-sm px-7 py-1.5 text-center">
-            Commander
-          </button>
-        </div>
-      ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {menuItems.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white border border-gray-200 rounded-xl shadow-lg p-6 flex flex-col items-center text-center transition-transform hover:scale-105"
+          >
+            <span className="text-6xl">{item.image}</span>
+            <h2 className="text-xl font-semibold mt-4">{item.plate}</h2>
+            <p className="text-gray-500 mt-2">{item.description}</p>
+            <button className="mt-4 bg-green-800 hover:bg-green-700 text-white text-sm font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+              Commander
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
