@@ -1,19 +1,14 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomeComponent from "./components/HomeComponent";
+import React from "react";
+// import Home from "./components/Home.jsx";
+import Menu from "./components/Menu";
 
 const App = () => {
-  function App() {
-    return (
-      <>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<HomeComponent />} />
-            <Route path="/menu" element={<MenuComponent />} />
-          </Routes>
-        </BrowserRouter>
-      </>
-    );
-  }
+  return (
+    <div>
+      {/* <Home /> */}
+      <Menu />
+    </div>
+  );
 };
 
 export default App;

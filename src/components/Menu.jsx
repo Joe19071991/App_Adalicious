@@ -1,7 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
-import Logo from "./Logo.jsx";
-
+import Logo from "./Logo";
 const menuItems = [
   {
     plate: "Hello World Burger",
@@ -43,9 +41,7 @@ const menuItems = [
   },
 ];
 
-const MenuComponent = () => {
-  const location = useLocation();
-  const name = location.state.name;
+const Menu = () => {
   return (
     <div className="bg-white border border-gray-300 rounded-lg shadow-sm  m-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4 ">
       <Logo />
@@ -70,4 +66,4 @@ const MenuComponent = () => {
   );
 };
 
-export default MenuComponent;
+export default Menu;
