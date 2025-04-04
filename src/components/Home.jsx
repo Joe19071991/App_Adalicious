@@ -18,7 +18,7 @@ const Home = () => {
         <input
           id="name"
           type="text"
-          placeholder="Ton prénom"
+          placeholder="prénom..."
           className="w-full border border-amber-400 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-300 placeholder-gray-400"
         />
 
