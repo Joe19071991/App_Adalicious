@@ -7,7 +7,7 @@ const Logo = () => {
       <img
         src={logo}
         alt="logo du site, un brocolis qui sourit"
-        className="size-16"
+        className="size-20"
       />
     </div>
   );
