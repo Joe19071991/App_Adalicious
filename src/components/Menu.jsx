@@ -1,5 +1,7 @@
-import React from "react";
+import { React, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
+
 const menuItems = [
   {
     plate: "Hello World Burger",
@@ -42,6 +44,29 @@ const menuItems = [
 ];
 
 const Menu = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const { name } = location.state || {};
+
+  // const [menuItems, setMenuItems] = useState([]);
+
+  useEffect(() => {
+    if (!name) {
+      navigate("/");
+    }
+  }, [name, navigate]);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/menu")
+  //     .then((response) => response.json())
+  //     .then((data) => setMenuItems(data))
+  //     .catch((error) => console.error("Error fetching data:", error));
+  // }, []);
+
+  if (!name) {
+    return null;
+  }
   return (
     <div className="bg-gradient-to-br from-white to-amber-50 border border-gray-200 rounded-2xl shadow-md m-6 p-6 space-y-6">
       <div className="flex justify-center">

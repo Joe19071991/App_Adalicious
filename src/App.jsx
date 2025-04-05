@@ -1,14 +1,20 @@
-import React from "react";
-// import Menu from "./components/Menu";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Menu from "./components/Menu";
 import Home from "./components/Home.jsx";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/menu",
+    element: <Menu />,
+  },
+]);
+
 const App = () => {
-  return (
-    <div>
-      <Home />
-      {/* <Menu /> */}
-    </div>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
